@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #F2F5FF;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #F2F5FF;
+            padding-bottom: 30px;
+        }
+
+        .main {
+            padding-top: 30px;
+        }
+
+        .img {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .img img {
+            height: 8%;
+            width: 8%;
+
+        }
+
+        .body {
+            width: 80%;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin-top: 30px;
+            height: auto;
+            padding-bottom: 50px;
+        }
+
+        .body .heading {
+            position: absolute;
+            left: 45%;
+            margin-top: 30px;
+        }
+
+        .detail {
+            margin-left: 20px;
+            margin-top: 150px;
+        }
+
+
+        .login_detail {
+            margin-top: 70px;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 7px;
+            background-color: transparent !important;
+            color: black;
+        }
+
+        .btn a {
+            text-decoration: none !important;
+            color: black;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 100%;
+            }
+
+            .body {
+                width: 95%;
+            }
+
+            .img img {
+                height: 15%;
+                width: 15%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+
+            <div class="body">
+                <div class="img">
+                    <img src="img/loader_ppsu_logo.png" />
+                </div>
+                <div class="heading">
+                    <h2>Login credentials</h2>
+                </div>
+
+                <div class="detail">
+                    <p>Sub :<b> Login credentials for PPSU 100 Activity Dashboard </b></p>
+
+                    <p>Dear,<b> DR. VIVEK BODARYA</b></p>
+                    <p style="margin-top: 40px">You can use the details given below to login to your Dashboard</p>
+                    <div class="login_detail">
+                        <p>Username : <b> vivekbodarya@gmail.com</b></p>
+                        <p>Password : <b> ppsu_dean</b></p>
+                    </div>
+                    <button class="btn"><a href="#" target="_blank">Go to Dashboard</a></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vb"></div>
+</body>
+
+</html>

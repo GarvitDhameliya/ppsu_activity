@@ -1,0 +1,37 @@
+<div>
+                                        <p className="card-text mt-4">Point for this Activity</p>
+                                        <h5>{data.status === "Completed" ? 10 : 0}</h5>
+                                        {
+                                            facultyReducer.faciltyActivityReqByClass.map((reqdata, index) => {
+                                                return (
+                                                    data._id === reqdata._id ?
+                                                        <div>
+                                                            <div className='mb-4 mt-5' key={index}>
+                                                                <label>Remark<small> (student)</small></label>
+                                                                <input
+                                                                    type="text"
+                                                                    name="student_remark"
+                                                                    className="form-control"
+                                                                    defaultValue={reqdata.message[0]?.fts}
+                                                                    disabled
+                                                                />
+                                                                <span className="text-danger"></span>
+                                                            </div>
+                                                            <div className='mb-0 mt-4'>
+                                                                <label>Remark<small> (Higher Authority)</small></label>
+                                                                <input
+                                                                    type="text"
+                                                                    name="apc_remark"
+                                                                    className="form-control"
+                                                                    defaultValue={reqdata.message[0]?.fta}
+                                                                    disabled
+                                                                />
+                                                                <span className="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                        : ''
+                                                )
+                                            })
+                                        }
+
+                                    </div>

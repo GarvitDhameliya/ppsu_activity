@@ -1,0 +1,38 @@
+
+<div className='table-responsive mt-5'>
+                <table className="table data-table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Index</th>
+                            <th scope="col">En Name</th>
+                            <th scope="col">User Name</th>
+                            <th scope="col">Class</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            apcReducer.apcStudent.map((data, index) => {
+                                {/* //console.log(data, "fsdfdsfdsfsdf") */ }
+                                return (
+                                    <tr key={index}>
+                                        <th scope="row" >{index + 1}</th>
+                                        <td>{data.name}</td>
+                                        <td>{data.enrollmentNo}</td>
+                                        <td>{data.class?.batchName}</td>
+                                        <td>
+                                            <div className='btn-group'>
+                                                <span className='mr-4'><i className='bx bxs-edit-alt' data-toggle="modal" data-target={`#edit${data.name}`} onClick={() => setStudentEdit(data)}></i></span>
+                                                <span><i className='bx bxs-trash ml-auto' onClick={() => deleteClass(data)}></i></span>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                )
+                            })
+                        }
+
+
+                    </tbody>
+                </table>
+                <EditStudentModal data={studentEdit} />
+            </div>

@@ -1,0 +1,219 @@
+const [Data, setData] = useState([])
+
+    const handleChange = (e) => {
+        e.preventDefault()
+        const { name, checked } = e.target
+
+        if (name === 'AllSelect') {
+            let tmpData = Data.map((user) => {
+                return { ...user, isChecked: checked };
+            })
+            setData(tmpData)
+            // //console.log(tmpData, "This is select All")
+        }
+        else {
+            let tmpData = Data.map((user) => user.enNumber === name ? { ...user, isChecked: checked } : user)
+            setData(tmpData)
+
+            // //console.log(tmpData)
+        }
+    }
+
+
+    useEffect(() => {
+        // setData(facultyReqReducer.faciltyActivityReqByClass)
+    }, [])
+
+
+
+
+
+
+
+
+
+<div className='table-responsive-sm'>
+    <form>
+        <div className='d-flex justify-content-end'><input type="submit" className='btn btn-sm add_export_btn' /></div>
+        <table className="table data-table text-center">
+            <thead>
+                <tr>
+                    {/* <th><input
+                                    type="checkbox"
+                                    name="AllSelect"
+                                    checked={Data.filter((user) => user?.isChecked !== true).length < 1}
+                                    onChange={handleChange}
+                                /></th> */}
+                    <th scope="col">Index</th>
+                    <th scope="col">En. Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Publish Date</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {/* {
+                            Data.map((val, ind) => {
+                                return (
+                                    <tr>
+                                        <th><input
+                                            type="checkbox"
+                                            name={val.enNumber}
+                                            checked={val?.isChecked || false}
+                                            onChange={handleChange}
+                                        /></th>
+                                        <th scope="row" >1</th>
+                                        <td>{val.enNumber}</td>
+                                        <td>{val.name}</td>
+                                        <td>{val.title}</td>
+                                        <td><span className="status_approve">{val.status}</span></td>
+                                        <td>{val.publishDate}</td>
+                                        <td>{val.totalPoints}</td>
+                                        <td>
+                                            <span className='mr-5'>view</span>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                )
+                            })
+                        } */}
+                {
+                    props.data === "all" ?
+                        facultyReqReducer.faciltyActivityReqByClass.map((data, index) => {
+                            return (
+                                <tr key={index}>
+                                    {/* <th><input
+                                                    type="checkbox"
+                                                    name={val.enNumber}
+                                                    checked={val?.isChecked || false}
+                                                    onChange={handleChange}
+                                                /></th> */}
+                                    <th scope="row" >{index + 1}</th>
+                                    <td>{data.student.enrollmentNo}</td>
+                                    <td>{data.student.name}</td>
+                                    <td>{data.heading}</td>
+                                    <td><span className={`status_${data.status}`}>{data.status}</span></td>
+                                    <td>05-10-2020</td>
+                                    <td>
+                                        <Link to={`/faculty/view/${data._id}`} >
+                                            <span className='mr-5'>view</span>
+                                        </Link>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            )
+                        })
+                        : props.data === "pending" ?
+                            facultyReqReducer.faciltyActivityReqByClass.map((data, index) => {
+                                if (data.status === 'Pending') {
+                                    return (
+                                        <tr key={index}>
+                                            <th scope="row" >{index + 1}</th>
+                                            <td>{data.student.enrollmentNo}</td>
+                                            <td>{data.student.name}</td>
+                                            <td>{data.heading}</td>
+                                            <td><span className={`status_${data.status}`}>{data.status}</span></td>
+                                            <td>05-10-2020</td>
+                                            <td>
+                                                <Link to={`/faculty/view/${data._id}`} >
+                                                    <span className='mr-5'>view</span>
+                                                </Link>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    )
+                                }
+                            })
+                            : props.data === "revised" ?
+                                facultyReqReducer.faciltyActivityReqByClass.map((data, index) => {
+                                    if (data.status === 'Revised') {
+                                        return (
+                                            <tr key={index}>
+                                                <th scope="row" >{index + 1}</th>
+                                                <td>{data.student.enrollmentNo}</td>
+                                                <td>{data.student.name}</td>
+                                                <td>{data.heading}</td>
+                                                <td><span className={`status_${data.status}`}>{data.status}</span></td>
+                                                <td>05-10-2020</td>
+                                                <td>
+                                                    <Link to={`/faculty/view/${data._id}`} >
+                                                        <span className='mr-5'>view</span>
+                                                    </Link>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        )
+                                    }
+                                })
+                                : props.data === "approved" ?
+                                    facultyReqReducer.faciltyActivityReqByClass.map((data, index) => {
+                                        if (data.status === 'Approved') {
+                                            return (
+                                                <tr key={index}>
+                                                    <th scope="row" >{index + 1}</th>
+                                                    <td>{data.student.enrollmentNo}</td>
+                                                    <td>{data.student.name}</td>
+                                                    <td>{data.heading}</td>
+                                                    <td><span className={`status_${data.status}`}>{data.status}</span></td>
+                                                    <td>05-10-2020</td>
+                                                    <td>
+                                                        <Link to={`/faculty/view/${data._id}`} >
+                                                            <span className='mr-5'>view</span>
+                                                        </Link>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            )
+                                        }
+                                    })
+                                    : props.data === "completed" ?
+                                        facultyReqReducer.faciltyActivityReqByClass.map((data, index) => {
+                                            if (data.status === 'Completed') {
+                                                return (
+                                                    <tr key={index}>
+                                                        <th scope="row" >{index + 1}</th>
+                                                        <td>{data.student.enrollmentNo}</td>
+                                                        <td>{data.student.name}</td>
+                                                        <td>{data.heading}</td>
+                                                        <td><span className={`status_${data.status}`}>{data.status}</span></td>
+                                                        <td>05-10-2020</td>
+                                                        <td>
+                                                            <Link to={`/faculty/view/${data._id}`} >
+                                                                <span className='mr-5'>view</span>
+                                                            </Link>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                )
+                                            }
+                                        })
+                                        : props.data === "rejected" ?
+                                            facultyReqReducer.faciltyActivityReqByClass.map((data, index) => {
+                                                if (data.status === 'Rejected') {
+                                                    return (
+                                                        <tr key={index}>
+                                                            <th scope="row" >{index + 1}</th>
+                                                            <td>{data.student.enrollmentNo}</td>
+                                                            <td>{data.student.name}</td>
+                                                            <td>{data.heading}</td>
+                                                            <td><span className={`status_${data.status}`}>{data.status}</span></td>
+                                                            <td>05-10-2020</td>
+                                                            <td>
+                                                                <Link to={`/faculty/view/${data._id}`} >
+                                                                    <span className='mr-5'>view</span>
+                                                                </Link>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                    )
+                                                }
+                                            }) : ''
+
+                }
+            </tbody>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,54 @@
+<div className='table-responsive-sm'>
+            <form>
+                {/* <div className='d-flex justify-content-end'><input type="submit" className='btn btn-sm add_export_btn' /></div> */}
+                <table className="table data-table text-center">
+                    <thead>
+                        <tr>
+                            <th><input
+                                type="checkbox"
+                                name="AllSelect"
+                                checked={Data.filter((user) => user?.isChecked !== true).length < 1}
+                                onChange={handleChange}
+                            /></th>
+                            <th scope="col">Index</th>
+                            <th scope="col">En. Number</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Publish Date</th>
+                            <th scope="col">Total Points</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            Data.map((val, ind) => {
+                                return (
+                                    <tr>
+                                        <th><input
+                                            type="checkbox"
+                                            name={val.enNumber}
+                                            checked={val?.isChecked || false}
+                                            onChange={handleChange}
+                                        /></th>
+                                        <th scope="row" >1</th>
+                                        <td>{val.enNumber}</td>
+                                        <td>{val.name}</td>
+                                        <td>{val.title}</td>
+                                        <td><span className="status_approve">{val.status}</span></td>
+                                        <td>{val.publishDate}</td>
+                                        <td>{val.totalPoints}</td>
+                                        <td>
+                                            <span className='mr-5'>view</span>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                )
+                            })
+                        }
+
+                    </tbody>
+                </table>
+            </form>
+        </div>

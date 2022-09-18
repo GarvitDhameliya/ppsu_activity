@@ -1,0 +1,24 @@
+COE
+--> School table -> React Data table
+--> Manage Dean -> Data table 
+--> Parameter requied or not?
+
+
+Dean
+--> Route chnage
+    Manage Section
+--> Classes Data table
+--> APC Data Table
+--> Activity Pool - Data empty
+--> Activity Request ( Data table)
+
+
+
+How to check add activity is duplicate or not ?-- dean Section
+Dean password not change
+
+
+
+
+Dean Update Live
+School Update Live

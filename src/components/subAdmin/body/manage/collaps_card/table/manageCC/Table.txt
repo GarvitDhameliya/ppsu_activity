@@ -1,0 +1,41 @@
+<div className='table-responsive mt-5'>
+                    <table className="table data-table text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Index</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">User Name</th>
+                                {/* <th scope="col">School</th> */}
+                                <th scope="col">Assign Class</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                apcReducer.apcCC.map((data, index) => {
+                                    {/* //console.log(data) */ }
+                                    return (
+                                        <tr key={index}>
+                                            <th scope="row" >{index + 1}</th>
+                                            <td>{data.name}</td>
+                                            <td>{data.username}</td>
+                                            {/* <td>{data.school?.name}</td> */}
+                                            <td>{data.class[0]?.batchName}</td>
+                                            <td>
+                                                <div className='btn-group'>
+                                                    <span className='mr-4'><i className='bx bxs-edit-alt' data-toggle="modal" data-target={`#edit${data.name}`} onClick={() => setClassEdit(data)}></i></span>
+                                                    <span><i className='bx bxs-trash ml-auto' onClick={() => deleteClass(data)}></i></span>
+                                                    {
+                                                        data.class.length === 0 ? <></> : <span><i className='bx bxs-no-entry text-danger ml-3' onClick={() => unassignClass(data)}></i></span>
+                                                    }
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    )
+                                })
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>

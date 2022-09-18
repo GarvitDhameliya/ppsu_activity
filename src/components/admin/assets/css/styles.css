@@ -1,0 +1,21 @@
+.instadmin_home_card {
+    border-radius: 10px !important;
+}
+
+.canvasjs-chart-credit {
+    display: none;
+}
+
+.canvasjs-chart-container button {
+    display: none !important;
+}
+
+.canvasjs-chart-toolbar button img {
+    opacity: 0.8;
+}
+
+.canvasjs-chart-toolbar button:hover {
+    background-color: #555555 !important;
+    color: black !important;
+    border-radius: 5px !important;
+}

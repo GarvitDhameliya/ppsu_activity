@@ -1,0 +1,40 @@
+.student_total_point_card {
+    border-radius: 12px;
+    background-color: #DBECFF;
+    border: none;
+
+
+}
+
+.student_total_point_card .font {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.student_total_point_card .point {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.student_total_point_card .tpoint {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+@media screen and (max-width: 500px) {
+    .student_total_point_card .font {
+        font-size: 16px !important;
+        font-weight: 600;
+    }
+
+    .student_total_point_card .point {
+        font-size: 22px !important;
+        font-weight: 600;
+    }
+
+    .student_total_point_card .tpoint {
+        font-size: 14px;
+        font-weight: 600;
+    }
+}

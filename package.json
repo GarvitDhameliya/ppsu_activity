@@ -1,8 +1,8 @@
 {
   "name": "ppsu_activity",
   "version": "0.1.0",
-  "private": true,
   "proxy": "http://aps.ppsu.ac.in:3006",
+  "private": true,
   "dependencies": {
     "@react-pdf-viewer/core": "^3.6.0",
     "@react-pdf-viewer/default-layout": "^3.6.0",

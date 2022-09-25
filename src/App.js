@@ -73,6 +73,7 @@ import SHelp from './components/student/Help';
 import Help from './components/faculty/Help';
 import Demo from './components/Dome';
 import Launch from './components/Launch'
+import About from './components/master/About';
 
 function App() {
 
@@ -103,8 +104,8 @@ function App() {
           <Route path="/apc" exact element={<SubAdminLogin />} />
           <Route path="/instadmin" exact element={<AdminLogin />} />
           <Route path="/coe" exact element={<CoeLogin />} /> */}
-          <Route path='/launch' element={<Launch />} />
-          <Route path='/demo' element={<Demo />} />
+          {/* <Route path='/launch' element={<Launch />} /> */}
+          {/* <Route path='/demo' element={<Demo />} /> */}
           <Route path='*' element={<PageNotFound />} />
         </Routes>
         {/* </Router> */}
@@ -137,6 +138,7 @@ function App() {
           <Route path='/profile' exact element={<Profile />} />
           <Route path='/view/:id' exact element={<View />} />
           <Route path='/help' exact element={<SHelp />} />
+          <Route path='/about' exact element={<About />} />
           <Route path='*' exact element={<PageNotFound />} />
         </Routes>
         {/* </Router> */}
@@ -168,6 +170,7 @@ function App() {
           <Route path='/faculty/:id' exact element={<FHome />} />
           <Route path='/help' exact element={<Help />} />
           <Route path='/profile' exact element={<FProfile />} />
+          <Route path='/about' exact element={<About />} />
           <Route path='/faculty/:id/view/:id' exact element={<FView />} />
           <Route path='*' exact element={<PageNotFound />} />
         </Routes>
@@ -204,6 +207,7 @@ function App() {
           <Route path='/apc/view/:id' exact element={<AView />} />
           <Route path='/profile' exact element={<AProfile />} />
           <Route path='/help' exact element={<AHelp />} />
+          <Route path='/about' exact element={<About />} />
           <Route path='*' exact element={<PageNotFound />} />
         </Routes>
         {/* </Router> */}
@@ -220,8 +224,6 @@ function App() {
           draggable
           pauseOnHover
         />
-
-
       </>
     )
   }
@@ -238,6 +240,7 @@ function App() {
           <Route path='/governance' exact element={<InstManage />} />
           <Route path='/profile' exact element={<InstProfile />} />
           <Route path='/help' exact element={<InstHelp />} />
+          <Route path='/about' exact element={<About />} />
           <Route path='/instadmin/view/:id' exact element={<InstView />} />
           <Route path='*' exact element={<PageNotFound />} />
         </Routes>
@@ -275,6 +278,7 @@ function App() {
           <Route path='/governance' exact element={<COEManage />} />
           <Route path='/coe/view/:id' exact element={<COEView />} />
           <Route path='/profile' exact element={<COEProfile />} />
+          <Route path='/about' exact element={<About />} />
           <Route path='*' exact element={<PageNotFound />} />
 
         </Routes>

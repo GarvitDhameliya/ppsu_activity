@@ -3,6 +3,7 @@ const studentNavMainData = {
         { label: 'Home', link: '/', icon: 'bx bxs-home' },
         { label: 'Help', link: '/help', icon: 'bx bx-help-circle' },
         { label: 'Profile', link: '/profile', icon: 'bx bx-user' },
+        { label: 'About', link: '/about', icon: 'bx bx-info-circle' },
     ],
     role: "student"
 }
@@ -13,6 +14,7 @@ const facultyNavMainData = {
         { label: 'Home', link: '/', icon: 'bx bxs-home' },
         { label: 'Help', link: '/help', icon: 'bx bx-help-circle' },
         { label: 'Profile', link: '/profile', icon: 'bx bx-user' },
+        { label: 'About', link: '/about', icon: 'bx bx-info-circle' },
     ],
     role: "faculty"
 }
@@ -26,6 +28,7 @@ const subAdminNavMainData = {
         { label: 'Governance', link: '/governance', icon: 'bx bx-user-plus' },
         { label: 'Help', link: '/help', icon: 'bx bx-help-circle' },
         { label: 'Profile', link: '/profile', icon: 'bx bx-user' },
+        { label: 'About', link: '/about', icon: 'bx bx-info-circle' },
     ],
     role: "apc"
 }
@@ -38,6 +41,7 @@ const adminNavMainData = {
         { label: 'Governance', link: '/governance', icon: 'bx bx-list-check' },
         { label: 'Help', link: '/help', icon: 'bx bx-help-circle' },
         { label: 'Profile', link: '/profile', icon: 'bx bx-user' },
+        { label: 'About', link: '/about', icon: 'bx bx-info-circle' },
     ],
     role: "admin"
 }
@@ -51,6 +55,8 @@ const masterNavMainData = {
         { label: 'Governance', link: '/governance', icon: 'bx bx-list-check' },
         { label: 'Help', link: '/help', icon: 'bx bx-help-circle' },
         { label: 'Profile', link: '/profile', icon: 'bx bx-user' },
+        { label: 'About', link: '/about', icon: 'bx bx-info-circle' },
+
     ],
     role: "coe"
 }

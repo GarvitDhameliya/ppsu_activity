@@ -53,12 +53,12 @@ const AddActivity = () => {
         const newFile = e.target.files[0];
         if (newFile) {
             if (newFile.type === 'application/pdf') {
-                if (newFile.size < 5242880) {
+                if (newFile.size < 1048576) {
                     const updatedList = [newFile];
                     setFileList(updatedList);
 
                 } else {
-                    setFileErr("File Size must be less than 5 MB!")
+                    setFileErr("File Size must be less than 1 MB!")
                 }
             }
             else {
@@ -161,13 +161,12 @@ const AddActivity = () => {
         <>
             <div className="alert alert-info mb-4" role="alert">
                 <strong>Instruction</strong>
-                <li>All feild are Required!</li>
+                <li>All field are Required!</li>
                 <li>Only <strong>PDF</strong> File Allowed!</li>
-                <li>File size must be less than <strong>5 MB</strong></li>
+                <li>File size must be less than <strong>1 MB</strong></li>
             </div>
 
             <form onSubmit={handleSubmit(onSubmitForm)} id="student_activity_req">
-
                 <div className='mb-4 mt-2 '>
                     <select className="form-control form-control-sm "
                         style={{ cursor: 'pointer' }}
@@ -334,17 +333,8 @@ const AddActivity = () => {
 
 
             </form>
-
-
         </>
     )
-    // } else {
-    //     return (
-    //         <>
-    //             Loading..
-    //         </>
-    //     )
-    //     }
 }
 
 
